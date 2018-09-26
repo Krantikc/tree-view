@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let node of data;let i = index;">
+    <i (click)="toggleNode(node, $event)" *ngIf="data[i].children && data[i].children.length > 0" class="fa {{!data[i].isOpen ? treeConfig.collapseCls : treeConfig.expandCls}}"></i>
+    <span *ngIf="!node.children" class="pad-8"></span>
+    <input type="checkbox"  *ngIf="treeConfig.enableSelection" (click)="selectNode(node, $event)"/>
+    <label>{{node.label}}</label>
+    <!-- <i (click)="deleteNode(node, $event)" class="fa fa-trash"></i> -->
+    <tree-grid [data]="node.children" [config]="config" [(nodes)]="selectedNodes" *ngIf="data[i].isOpen"></tree-grid>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+.pad-8 {
+    padding: 8px;
+}
+ul {
+    list-style: none;
+    padding: 0 15px;
+    li {
+        height: auto;
+        padding: 5px;
+        cursor: pointer;
+
+        .fa {
+            width: 12px;
+        }
+    }
+}
